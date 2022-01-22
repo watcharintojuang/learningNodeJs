@@ -1,10 +1,11 @@
-const http = require('http')
+const express = require('express')
+const router = require('./routes/myRouter')
 
-const server = http.createServer(function(req,res){
-    res.write('<h1>Hello Watcharin</h1>')
-    res.end()
-})
+const app = express()
 
-server.listen(8080,() => {
-    console.log("server running....")
+
+app.use(router)
+
+app.listen(8080,()=>{
+    console.log('start port 8080')
 })
