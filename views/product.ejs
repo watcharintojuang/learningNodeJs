@@ -12,20 +12,22 @@
     </head>
     <body>
         <%- include('navbar') %>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-2"></div>
-                <div class="col-lg-8">
-                    <div class="card mt-4">
-                        <img class="card-img-top img-fluid" src="images/products/product1.png" alt="" />
-                        <div class="card-body">
-                            <h3 class="card-title">ชื่อสินค้า</h3>
-                            <h4>ราคาสินค้า</h4>
-                            <p class="card-text">รายละเอียดสินค้าLorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis quo quibusdam iste amet tempora aliquid veniam, enim dolor beatae! Necessitatibus officiis reiciendis mollitia ullam velit fuga earum minima illo cumque?</p>
+        <% if(product) {%>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8">
+                        <div class="card mt-4">
+                            <img class="card-img-top img-fluid" src="images/products/<%= product.image %>" alt="" />
+                            <div class="card-body">
+                                <h3 class="card-title"><%= product.name %></h3>
+                                <h4>ราคา <%= product.price %> บาท</h4>
+                                <p class="card-text">รายละเอียดสินค้า <%= product.description%></p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        <% } %>
     </body>
 </html>
